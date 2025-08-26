@@ -1,28 +1,19 @@
-# Payroll Management System (MySQL)
+# Payroll Management System — C++ + MySQL (Work in Progress)
 
-## Project Overview
-This project is a simple Payroll Management System built using MySQL.  
-It manages employee records, salaries, tax deductions, and benefits while demonstrating relational database design and data consistency.
-
-## Features
-- Manage employee records (add, update, delete).  
-- Handle salaries, deductions, and benefits.  
-- Maintain payroll history and reporting structure.  
-
-## Database Design
-- Employee table for employee details.  
-- Payroll table for salary and deductions.  
-- Transactions table for payroll history.  
-
-## How It Works
-The database schema defines relationships using primary and foreign keys.  
-Payroll operations are handled using SQL queries for accurate record-keeping.  
+A console-based payroll system implemented in **C++** with **MySQL** as the database.  
+This WIP version demonstrates database connectivity, a minimal menu, and basic employee operations.
 
 ## Repository Contents
-- `database.sql` – Schema and sample dataset.  
-- `docs/report.pdf` – (Optional) Documentation with ER diagram or workflow.  
+- `main.cpp` – Console app skeleton (WIP).
+- `db.hpp`, `db.cpp` – MySQL connection wrapper using MySQL Connector/C++.
+- `schema.sql` – Database schema and sample rows.
+- `CMakeLists.txt` – Simple CMake build script.
+- `.gitattributes` – Ensures SQL is counted in GitHub language breakdown.
 
-## Learning Outcomes
-- Experience in database schema design.  
-- Practical understanding of payroll management use cases.  
-- Improved knowledge of SQL queries and relational structures.
+## Build (example)
+- Install MySQL Server and MySQL Connector/C++.
+- Create DB: run `schema.sql` in MySQL.
+- Configure connector include/lib paths if needed, then:
+  - `cmake -S . -B build`
+  - `cmake --build build`
+  - Run `./build/payroll`
